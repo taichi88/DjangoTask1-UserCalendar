@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Person List</title>
+</head>
+<body>
+    <h1>Person List</h1>
+
+    <form method="GET">
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+
+    <ul>
+        {% for person in persons %}
+            <li>{{ person.name }} - Age: {{ age_info[person.id] }} years</li>
+        {% empty %}
+            <p>No results found.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>
